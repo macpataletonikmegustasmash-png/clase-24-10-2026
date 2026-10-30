@@ -16,24 +16,23 @@ import java.util.Queue;
 public class TurnoController {
 
     private int contador = 0;
-
+    private Queue<Turno> turnos = new LinkedList<>();
     @PostMapping
     public Turno pedirTurno(@RequestBody TurnoRequest request) {
         contador++;
         Turno turno = new Turno(contador, request.getNombre());
-
+        turnos.add(turno);
         return turno;
     }
 
     @GetMapping("/siguiente")
     public Turno siguiente() {
-
-        return null;
+        return turnos.poll();
     }
 
     @GetMapping
     public Queue<Turno> verCola() {
 
-        return null;
+        return turnos;
     }
 }
