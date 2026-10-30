@@ -1,0 +1,22 @@
+### Agregar a la pila (push)
+POST http://localhost:8080/pila?valor=hola
+
+### Sacar de la pila (pop)
+GET http://localhost:8080/pila/pop
+
+### Ver toda la pila
+GET http://localhost:8080/pila
+
+### Pedir turno
+POST http://localhost:8080/turnos
+Content-Type: application/json
+
+{
+  "nombre": "Ana"
+}
+
+### Pasar al siguiente turno
+GET http://localhost:8080/turnos/siguiente
+
+### Ver toda la cola
+GET http://localhost:8080/turnos
