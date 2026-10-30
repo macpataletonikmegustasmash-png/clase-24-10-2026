@@ -32,7 +32,6 @@ public class TurnoController {
 
     @GetMapping
     public Queue<Turno> verCola() {
-
         return turnos;
     }
 }
